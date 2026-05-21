@@ -1,0 +1,108 @@
+/* ── RESET ─────────────────────────────────────── */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ── BODY ──────────────────────────────────────── */
+body {
+    background-color: #0d1b2a;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* ── NAVBAR ────────────────────────────────────── */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #1a2940;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.nav-links a:hover {
+    color: #4da6ff;
+}
+
+.nav-links span {
+    color: white;
+}
+
+/* ── MAIN LAYOUT ───────────────────────────────── */
+.main {
+    display: flex;
+    height: calc(100vh - 80px);
+}
+
+/* ── PANEL IZQUIERDO ───────────────────────────── */
+.panel-izquierdo {
+    width: 250px;
+    background-color: #1a2940;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-right: 2px solid #2d4060;
+}
+
+.panel-izquierdo h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #4da6ff;
+}
+
+.panel-izquierdo p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* ── PANEL CENTRAL ─────────────────────────────── */
+.panel-central {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    gap: 20px;
+}
+
+.panel-central img {
+    height: 120px;
+}
+
+/* ── TABS ──────────────────────────────────────── */
+.tabs {
+    display: flex;
+    gap: 10px;
+}
+
+.tabs button {
+    background-color: #1a2940;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.tabs button:hover {
+    background-color: #4da6ff;
+}
