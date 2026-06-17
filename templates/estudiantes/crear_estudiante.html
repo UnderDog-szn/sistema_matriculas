@@ -1,0 +1,39 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+
+            <div class="card shadow-lg border-0 rounded-4">
+
+                <div class="card-header bg-success text-white text-center py-4 rounded-top-4">
+                    <h3 class="mb-0 fw-bold">
+                        Registrar Nuevo Estudiante
+                    </h3>
+                </div>
+
+                <div class="card-body p-4 p-md-5">
+
+                    <form method="POST" class="needs-validation" novalidate>
+                        {% csrf_token %}
+
+                        <div class="mb-4">
+                            {{ form.as_p }}
+                        </div>
+
+                        <button type="submit"
+                                class="btn btn-success btn-lg w-100 rounded-pill shadow-sm mt-3">
+                            Guardar Estudiante
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

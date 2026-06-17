@@ -1,108 +1,65 @@
-/* ── RESET ─────────────────────────────────────── */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ==========================================================================
+   SMA - ESTILOS PERSONALIZADOS PARA TU NAVBAR ACTUAL
+   ========================================================================== */
+
+/* Contenedor principal de la barra de navegación */
+.navbar-sma {
+    background-color: #0A2540 !important; /* El azul oscuro de tu paleta */
+    border-bottom: 4px solid #00A896;     /* Línea inferior en turquesa */
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
 }
 
-/* ── BODY ──────────────────────────────────────── */
-body {
-    background-color: #0d1b2a;
-    font-family: Arial, sans-serif;
-    color: white;
+/* El título de la Universidad (Izquierda) */
+.navbar-sma .navbar-brand {
+    color: #FFFFFF !important;            /* Blanco puro destacado */
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
 }
 
-/* ── NAVBAR ────────────────────────────────────── */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background-color: #1a2940;
+.navbar-sma .navbar-brand:hover {
+    color: #D8F3DC !important;            /* Destello verde menta al pasar el cursor */
 }
 
-.logo img {
-    height: 50px;
+/* Los enlaces del menú (Crear Asignaturas, Estudiantes, Profesor) */
+.navbar-sma .nav-link {
+    color: #D8F3DC !important;            /* Tono menta claro para los textos normales */
+    font-weight: 500;
+    margin-right: 0.5rem;
+    transition: color 0.3s ease;
 }
 
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+/* Comportamiento al pasar el cursor sobre los enlaces */
+.navbar-sma .nav-link:hover {
+    color: #00A896 !important;            /* Cambia al turquesa brillante */
 }
 
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
+/* Enlace activo (la página en la que se encuentra) */
+.navbar-sma .nav-link.active {
+    color: #00A896 !important;            /* Queda fijo en turquesa */
+    font-weight: 700;
 }
 
-.nav-links a:hover {
-    color: #4da6ff;
+/* El texto informativo que tienes a la derecha */
+.navbar-sma .navbar-text {
+    color: rgba(216, 243, 220, 0.75) !important; /* Menta con opacidad para que no compita */
+    font-size: 0.9rem;
+    font-style: italic;
 }
 
-.nav-links span {
-    color: white;
+/* Adaptación del menú responsive para celulares */
+.navbar-sma .navbar-toggler {
+    border-color: rgba(216, 243, 220, 0.2) !important;
 }
 
-/* ── MAIN LAYOUT ───────────────────────────────── */
-.main {
-    display: flex;
-    height: calc(100vh - 80px);
+.navbar-sma .navbar-toggler-icon {
+    /* Convierte las tres líneas del menú responsive a color menta claro */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23D8F3DC' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
 
-/* ── PANEL IZQUIERDO ───────────────────────────── */
-.panel-izquierdo {
-    width: 250px;
-    background-color: #1a2940;
-    padding: 30px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    border-right: 2px solid #2d4060;
-}
-
-.panel-izquierdo h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #4da6ff;
-}
-
-.panel-izquierdo p {
-    font-size: 14px;
-    color: #ccc;
-}
-
-/* ── PANEL CENTRAL ─────────────────────────────── */
-.panel-central {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px;
-    gap: 20px;
-}
-
-.panel-central img {
-    height: 120px;
-}
-
-/* ── TABS ──────────────────────────────────────── */
-.tabs {
-    display: flex;
-    gap: 10px;
-}
-
-.tabs button {
-    background-color: #1a2940;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 14px;
-}
-
-.tabs button:hover {
-    background-color: #4da6ff;
+.form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }

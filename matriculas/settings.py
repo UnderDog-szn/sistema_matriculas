@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Application definition
 
@@ -37,11 +38,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "estudiantes",
-    "docentes",
-    "asignaturas",
-    "matriculas_sma",
-    "evaluaciones",
+    "apps.estudiantes",
+    "apps.docentes",
+    "apps.asignaturas",
+    "apps.matriculas_sma",
+    "apps.evaluaciones",
 ]
 
 MIDDLEWARE = [
@@ -119,5 +120,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_URL = "static/"
-STATICFILES_DIRS = [BASE_DIR / "static"]
+STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
