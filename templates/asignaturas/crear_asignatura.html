@@ -29,6 +29,38 @@
 
                     </form>
 
+                    <div class="text-center mt-4">
+                        <a href="{% url 'lista_asignaturas' %}" class="btn btn-outline-warning btn-lg shadow-sm">
+                            📋 Ver registros guardados
+                        </a>
+                    </div>
+
+                    <div class="mt-4 card bg-light border-light p-4">
+                        <h5 class="fw-semibold">Últimas asignaturas guardadas</h5>
+                        {% if ultimas_asignaturas %}
+                            <ul class="list-group mt-3">
+                                {% for asignatura in ultimas_asignaturas %}
+                                    <li class="list-group-item">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <strong>{{ asignatura.nombre }}</strong><br>
+                                                <small class="text-muted">
+                                                    {{ asignatura.codigo }} • {{ asignatura.dia_de_clase }}
+                                                    {% if asignatura.docente %}- {{ asignatura.docente.nombre }}{% endif %}
+                                                </small>
+                                            </div>
+                                            <span class="badge bg-warning text-dark rounded-pill">
+                                                {{ asignatura.hora }}
+                                            </span>
+                                        </div>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% else %}
+                            <p class="text-muted mt-3">Aún no hay asignaturas registradas.</p>
+                        {% endif %}
+                    </div>
+
                 </div>
 
             </div>

@@ -1,0 +1,44 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="card shadow-lg border-0 rounded-4">
+                <div class="card-header bg-success text-white text-center py-4 rounded-top-4">
+                    <h3 class="mb-0 fw-bold">Estudiantes guardados</h3>
+                </div>
+                <div class="card-body p-4">
+                    <a href="{% url 'crear_estudiante' %}" class="btn btn-outline-success mb-4">Registrar nuevo estudiante</a>
+                    {% if estudiantes %}
+                        <div class="table-responsive">
+                            <table class="table table-striped align-middle">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Correo</th>
+                                        <th>Código</th>
+                                        <th>Sexo</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for estudiante in estudiantes %}
+                                        <tr>
+                                            <td>{{ estudiante.nombre }}</td>
+                                            <td>{{ estudiante.correo }}</td>
+                                            <td>{{ estudiante.codigo }}</td>
+                                            <td>{{ estudiante.get_sexo_display }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    {% else %}
+                        <p class="text-muted">Aún no hay estudiantes registrados.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

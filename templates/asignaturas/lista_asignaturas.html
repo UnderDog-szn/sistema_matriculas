@@ -1,0 +1,46 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="card shadow-lg border-0 rounded-4">
+                <div class="card-header bg-warning text-dark text-center py-4 rounded-top-4">
+                    <h3 class="mb-0 fw-bold">Asignaturas guardadas</h3>
+                </div>
+                <div class="card-body p-4">
+                    <a href="{% url 'crear_asignatura' %}" class="btn btn-outline-warning mb-4">Registrar nueva asignatura</a>
+                    {% if asignaturas %}
+                        <div class="table-responsive">
+                            <table class="table table-striped align-middle">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Docente</th>
+                                        <th>Código</th>
+                                        <th>Día</th>
+                                        <th>Hora</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for asignatura in asignaturas %}
+                                        <tr>
+                                            <td>{{ asignatura.nombre }}</td>
+                                            <td>{% if asignatura.docente %}{{ asignatura.docente.nombre }}{% else %}-{% endif %}</td>
+                                            <td>{{ asignatura.codigo }}</td>
+                                            <td>{{ asignatura.dia_de_clase }}</td>
+                                            <td>{{ asignatura.hora }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    {% else %}
+                        <p class="text-muted">Aún no hay asignaturas registradas.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

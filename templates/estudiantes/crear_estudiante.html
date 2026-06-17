@@ -26,8 +26,32 @@
                                 class="btn btn-success btn-lg w-100 rounded-pill shadow-sm mt-3">
                             Guardar Estudiante
                         </button>
-
                     </form>
+
+                    <div class="text-center mt-4">
+                        <a href="{% url 'lista_estudiantes' %}" class="btn btn-outline-success btn-lg shadow-sm">
+                            📋 Ver registros guardados
+                        </a>
+                    </div>
+
+                    <div class="mt-4 card bg-light border-light p-4">
+                        <h5 class="fw-semibold">Últimos estudiantes guardados</h5>
+                        {% if ultimos_estudiantes %}
+                            <ul class="list-group mt-3">
+                                {% for estudiante in ultimos_estudiantes %}
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <strong>{{ estudiante.nombre }}</strong><br>
+                                            <small class="text-muted">{{ estudiante.correo }}</small>
+                                        </div>
+                                        <span class="badge bg-success rounded-pill">{{ estudiante.codigo }}</span>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% else %}
+                            <p class="text-muted mt-3">Aún no hay estudiantes registrados.</p>
+                        {% endif %}
+                    </div>
 
                 </div>
 
