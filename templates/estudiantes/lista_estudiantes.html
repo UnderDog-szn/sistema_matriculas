@@ -19,6 +19,7 @@
                                         <th>Correo</th>
                                         <th>Código</th>
                                         <th>Sexo</th>
+                                        <th>Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -28,6 +29,13 @@
                                             <td>{{ estudiante.correo }}</td>
                                             <td>{{ estudiante.codigo }}</td>
                                             <td>{{ estudiante.get_sexo_display }}</td>
+                                            <td>
+                                                <a href="{% url 'actualizar_estudiante' estudiante.pk %}" class="btn btn-sm btn-warning">Editar</a>
+                                                <form action="{% url 'eliminar_estudiante' estudiante.pk %}" method="post" class="d-inline">
+                                                    {% csrf_token %}
+                                                    <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
+                                                </form>
+                                            </td>
                                         </tr>
                                     {% endfor %}
                                 </tbody>
