@@ -20,14 +20,35 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto gap-2">
-                <li class="nav-item">
-                    <a class="nav-link fw-semibold" href="{% url 'crear_estudiante' %}">Estudiantes</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle fw-semibold" href="#" id="dropdownEstudiantes" role="button"
+                        data-bs-toggle="dropdown">
+                        Estudiantes
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownEstudiantes">
+                        <li><a class="dropdown-item" href="{% url 'crear_estudiante' %}">Registrar estudiante</a></li>
+                        <li><a class="dropdown-item" href="{% url 'lista_estudiantes' %}">Ver estudiantes</a></li>
+                    </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-semibold" href="{% url 'crear_docente' %}">Docentes</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle fw-semibold" href="#" id="dropdownDocentes" role="button"
+                        data-bs-toggle="dropdown">
+                        Docentes
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownDocentes">
+                        <li><a class="dropdown-item" href="{% url 'crear_docente' %}">Registrar docente</a></li>
+                        <li><a class="dropdown-item" href="{% url 'lista_docentes' %}">Ver docentes</a></li>
+                    </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link fw-semibold" href="{% url 'crear_asignatura' %}">Asignaturas</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle fw-semibold" href="#" id="dropdownAsignaturas" role="button"
+                        data-bs-toggle="dropdown">
+                        Asignaturas
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownAsignaturas">
+                        <li><a class="dropdown-item" href="{% url 'crear_asignatura' %}">Registrar asignatura</a></li>
+                        <li><a class="dropdown-item" href="{% url 'lista_asignaturas' %}">Ver asignaturas</a></li>
+                    </ul>
                 </li>
             </ul>
         </div>

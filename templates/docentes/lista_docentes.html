@@ -11,28 +11,35 @@
                 <div class="card-body p-4">
                     <a href="{% url 'crear_docente' %}" class="btn btn-outline-primary mb-4">Registrar nuevo docente</a>
                     {% if docentes %}
-                        <div class="table-responsive">
-                            <table class="table table-striped align-middle">
-                                <thead>
-                                    <tr>
-                                        <th>Nombre</th>
-                                        <th>Correo</th>
-                                        <th>Sexo</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {% for docente in docentes %}
-                                        <tr>
-                                            <td>{{ docente.nombre }}</td>
-                                            <td>{{ docente.correo }}</td>
-                                            <td>{{ docente.get_sexo_display }}</td>
-                                        </tr>
-                                    {% endfor %}
-                                </tbody>
-                            </table>
-                        </div>
+                    <div class="table-responsive">
+                        <table class="table table-striped align-middle">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Correo</th>
+                                    <th>Sexo</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for docente in docentes %}
+                                <tr>
+                                    <td>{{ docente.nombre }}</td>
+                                    <td>{{ docente.correo }}</td>
+                                    <td>{{ docente.get_sexo_display }}</td>
+                                    <td>
+                                        <a href="{% url 'actualizar_docente' docente.pk %}"
+                                            class="btn btn-sm btn-warning">Editar</a>
+                                        <a href="{% url 'eliminar_docente' docente.pk %}"
+                                            class="btn btn-sm btn-danger">Eliminar</a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
                     {% else %}
-                        <p class="text-muted">Aún no hay docentes registrados.</p>
+                    <p class="text-muted">Aún no hay docentes registrados.</p>
                     {% endif %}
                 </div>
             </div>
